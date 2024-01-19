@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MobileApp.Converters"
+             xmlns:VM="clr-namespace:MobileApp.ViewModels"
+             x:Class="MobileApp.BookDetailsPage"
+             Title="BookDetailsPage"
+             x:DataType="VM:BookDetailsViewModel"
+             BackgroundColor="White">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:RatingToColorConverter x:Key="RatingToColorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Spacing="15" Padding="20">
+        <Label Text="My Rating" FontSize="Medium" TextColor="#1e5a8c" />
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <Button Text="★" Command="{Binding SetRatingCommand}" CommandParameter="1" FontSize="Large" BackgroundColor="{Binding MyRating, Converter={StaticResource RatingToColorConverter}, ConverterParameter=1}" />
+            <Button Text="★" Command="{Binding SetRatingCommand}" CommandParameter="2" FontSize="Large" BackgroundColor="{Binding MyRating, Converter={StaticResource RatingToColorConverter}, ConverterParameter=2}" />
+            <Button Text="★" Command="{Binding SetRatingCommand}" CommandParameter="3" FontSize="Large" BackgroundColor="{Binding MyRating, Converter={StaticResource RatingToColorConverter}, ConverterParameter=3}" />
+            <Button Text="★" Command="{Binding SetRatingCommand}" CommandParameter="4" FontSize="Large" BackgroundColor="{Binding MyRating, Converter={StaticResource RatingToColorConverter}, ConverterParameter=4}" />
+            <Button Text="★" Command="{Binding SetRatingCommand}" CommandParameter="5" FontSize="Large" BackgroundColor="{Binding MyRating, Converter={StaticResource RatingToColorConverter}, ConverterParameter=5}" />
+        </StackLayout>
+
+        <Label Text="Date Finished" FontSize="Medium" TextColor="#1e5a8c" />
+        <DatePicker Date="{Binding DateFinished}" BackgroundColor="LightGray" FontSize="Small" TextColor="DodgerBlue"/>
+
+        <Label Text="Notes" FontSize="Medium" TextColor="#1e5a8c"/>
+        <Editor Placeholder="Notes" PlaceholderColor="DodgerBlue" Text="{Binding Notes}" HeightRequest="100" TextColor="DodgerBlue" BackgroundColor="LightGray" />
+
+        <Button Text="Save Details" Command="{Binding SaveBookCommand}" BackgroundColor="#3498df" TextColor="White" CornerRadius="8" Padding="20,10" />
+    </StackLayout>
+</ContentPage>

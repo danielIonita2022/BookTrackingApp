@@ -1,0 +1,57 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.MainMenuPage"
+             BackgroundColor="#f7f7f9">
+
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0"
+               Text="Main Menu"
+               FontSize="26"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               Margin="0,0,0,20"
+               TextColor="#2c3e50" />
+
+        <Frame Grid.Row="1"
+               BackgroundColor="#ecf0f1"
+               CornerRadius="15"
+               Padding="10"
+               HasShadow="True">
+            <StackLayout Spacing="15">
+                <Button Text="My Read Books"
+                        Command="{Binding MyReadBooksCommand}"
+                        BackgroundColor="#3498db"
+                        TextColor="#ffffff"
+                        CornerRadius="10"
+                        HeightRequest="70"
+                        FontSize="20"
+                        VerticalOptions="FillAndExpand" />
+
+                <Button Text="Currently Reading"
+                        Command="{Binding CurrentlyReadingCommand}"
+                        BackgroundColor="#3498db"
+                        TextColor="#ffffff"
+                        CornerRadius="10"
+                        HeightRequest="70"
+                        FontSize="20"
+                        VerticalOptions="FillAndExpand" />
+
+                <Button Text="Statistics"
+                        Command="{Binding StatisticsCommand}"
+                        BackgroundColor="#3498db"
+                        TextColor="#ffffff"
+                        CornerRadius="10"
+                        HeightRequest="70"
+                        FontSize="20"
+                        VerticalOptions="FillAndExpand" />
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>
+ 

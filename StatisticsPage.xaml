@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:micro="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="MobileApp.StatisticsPage"
+             Title="StatisticsPage">
+
+    <ScrollView BackgroundColor="White">
+        <StackLayout Spacing="20" Padding="20">
+
+            <Label Text="Reading Statistics"
+                   FontSize="Large"
+                   HorizontalOptions="Center"
+                   TextColor="#34495e"/>
+
+            <Frame>
+                <Picker Title="Select Year" ItemsSource="{Binding Years}" SelectedItem="{Binding SelectedYear, Mode=TwoWay}" TextColor="#34495e" />
+            </Frame>
+
+            <Frame BackgroundColor="#ecf0f1" CornerRadius="10" Padding="10">
+                <StackLayout>
+                    <Label Text="Books Read" FontSize="Medium" TextColor="#34495e"/>
+
+                    <micro:ChartView x:Name="chartView" Chart="{Binding BooksReadChart}" HeightRequest="300"/>
+                </StackLayout>
+            </Frame>
+
+
+            <Frame BackgroundColor="#ecf0f1" CornerRadius="10" Padding="10">
+                <StackLayout>
+                    <Label Text="Pages Read" FontSize="Medium" TextColor="#34495e"/>
+                    
+                    <micro:ChartView x:Name="chartView1" Chart="{Binding PagesReadChart}" HeightRequest="400"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="#ecf0f1" CornerRadius="10" Padding="10">
+                <StackLayout>
+                    <Label Text="Favorite Genre" FontSize="Medium" TextColor="#34495e"/>
+                    <StackLayout Orientation="Vertical" Padding="10,0,0,0">
+                        <Label Text="{Binding FavoriteGenreName}" FontSize="Medium" TextColor="#2c3e50"/>
+                        <Label Text="{Binding FavoriteGenreBookCount, StringFormat='{0} Books'}" FontSize="Small" TextColor="#7f8c8d"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

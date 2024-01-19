@@ -2,7 +2,7 @@
 ![C#](https://img.shields.io/badge/-C%23-239120?style=flat-square&logo=c-sharp)
 ![SQLite](https://img.shields.io/badge/-SQLite-003B57?style=flat-square&logo=sqlite)
 
-.NET MAUI app with SQLite DB used to track reading.
+A mobile app made in .NET MAUI with SQLite DB used to track reading.
 
 ## Features
 
